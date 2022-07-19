@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Prediction</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="static/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="static/js/jquery.min.js"></script>
+		<script src="static/js/jquery.dropotron.min.js"></script>
+		<script src="static/js/jquery.scrollgress.min.js"></script>
+		<script src="static/js/jquery.scrolly.min.js"></script>
+		<script src="static/js/jquery.slidertron.min.js"></script>
+		<script src="static/js/skel.min.js"></script>
+		<script src="static/js/skel-layers.min.js"></script>
+		<script src="static/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="static/css/skel.css" />
+			<link rel="stylesheet" href="static/css/style.css" />
+			<link rel="stylesheet" href="static/css/style-xlarge.css" />
+		</noscript>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<!--[if lte IE 9]><link rel="stylesheet" href="static/css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="static/css/ie/v8.css" /><![endif]-->
+	</head>
+	<style>
+.rainbow-text h2{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 40px;
+	letter-spacing: 3px;
+	text-shadow: #A3A3A3 1px 1px 1px;
+}
+</style>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+				<nav id="nav">
+					<ul>
+						<li><a href="{{ url_for('home') }}">Home</a></li>
+						<li><a href="{{ url_for('load') }}">Load Dataset</a></li>
+						<li><a href="{{ url_for('view') }}">View Dataset</a></li>
+						<li><a href="{{ url_for('training') }}">Train Models</a></li>
+						<li><a href="{{ url_for('prediction') }}">Prediction</a></li>
+                        <li><a href="{{ url_for('Graph') }}">Graph</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+		<section id="main" class="wrapper style1">
+			<header class="major">
+				<h2 style="color:#ff00ff; background-color:black;">H U M I D I T Y &nbsp;&nbsp;&nbsp;  A G A I N S T &nbsp;&nbsp;&nbsp;  T I M E </h2><br>
+				<img src="static/images/humidity.png" style="width: 1000px;height: 400px: margin-right: 1px;border-right-width: 0px;"><br><br><br><br><br><br>
+				<h2 style="color:#ff00ff; background-color:black;">T E M P E R A T U R E &nbsp;&nbsp;&nbsp;  A G A I N S T &nbsp;&nbsp;&nbsp;  T I M E </h2><br>
+				<img src="static/images/temperature.png" style="width: 1000px;height: 400px: margin-right: 1px;border-right-width: 0px;"><br><br><br><br><br><br>
+				<h2 style="color:#ff00ff; background-color:black;">W I N D &nbsp;&nbsp;&nbsp;  A G A I N S T &nbsp;&nbsp;&nbsp;  T I M E </h2><br>
+				<img src="static/images/wind.png" style="width: 1000px;height: 400px: margin-right: 1px;border-right-width: 0px;">
+			</header></section>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	</body>
+</html>

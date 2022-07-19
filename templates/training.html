@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Training Model</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="static/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="static/js/jquery.min.js"></script>
+		<script src="static/js/jquery.dropotron.min.js"></script>
+		<script src="static/js/jquery.scrollgress.min.js"></script>
+		<script src="static/js/jquery.scrolly.min.js"></script>
+		<script src="static/js/jquery.slidertron.min.js"></script>
+		<script src="static/js/skel.min.js"></script>
+		<script src="static/js/skel-layers.min.js"></script>
+		<script src="static/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="static/css/skel.css" />
+			<link rel="stylesheet" href="static/css/style.css" />
+			<link rel="stylesheet" href="static/css/style-xlarge.css" />
+		</noscript>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<!--[if lte IE 9]><link rel="stylesheet" href="static/css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="static/css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+				<nav id="nav">
+					<ul>
+						<li><a href="{{ url_for('home') }}">Home</a></li>
+						<li><a href="{{ url_for('load') }}">Load Dataset</a></li>
+						<li><a href="{{ url_for('view') }}">View Dataset</a></li>
+						<li><a href="{{ url_for('training') }}">Train Models</a></li>
+						<li><a href="{{ url_for('prediction') }}">Prediction</a></li>
+						<li><a href="{{ url_for('Graph') }}">Graph</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<center>
+			<div class="col-md-8">
+			  {% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+				  {% for category, message in messages %}
+					<div class="alert alert-{{ category }}">
+					  {{ msg }}
+					</div>
+				  {% endfor %}
+				{% endif %}
+			  {% endwith %}
+			  {% block content %}{% endblock %}
+			</div>
+		</center>
+
+		<!-- Main -->
+			<section id="main" class="wrapper style1">
+				<header class="major">
+					<h2 style="color:#003cff; background-color:black;">TRAINING MODELS</h2>
+						{% if model is not defined %}
+							<br>
+							<p>Regression Machine Learning models are trained for Weather Prediction.<br>
+							</p>
+						{% endif %}
+				</header>
+
+
+				<div class="container">
+					<!-- Content -->
+						<section id="content">
+							<center>
+								<form action="{{ url_for('training') }}" method="post">
+									<h3> {{ mag|safe }}</h3>
+									<h3> {{ mag1|safe }}</h3>
+									<h3> {{ mag2|safe }}</h3>
+									<h3> {{ mag3|safe }}</h3>
+									<label for="algo">Select a Model:</label>
+
+									<select id="algo" name="algo" style="width: 30%">
+										<option value="0">Select Model</option>
+									  	<option value="1">SUPPORT VECTOR REGRESSOR</option>
+									  	<option value="2">DECISION TREE</option>
+										<option value="3">RANDOM FOREST</option>
+										<option value="4">LINEAR REGRESSION</option>
+										<option value="5">RIDGE REGRESSION</option>
+									</select>
+									<br>
+									<input type="submit">
+								</form>
+							</center>
+
+<!--
+							<a href="#" class="image fit"><img src="static/images/pic07.jpg" alt="" /></a>
+							<h3>Dolore Amet Consequat</h3>
+							<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
+							<h3>Sed Magna Ornare</h3>
+							<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus.</p>
+							<ul>
+								<li>Faucibus orci lobortis ac adipiscing integer.</li>
+								<li>Col accumsan arcu mi aliquet placerat.</li>
+								<li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
+								<li>Blandit massa non blandit tempor interdum.</li>
+								<li>Lacinia mattis arcu nascetur lobortis.</li>
+							</ul>
+-->
+						</section>
+								
+				</div>
+			</section>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>
